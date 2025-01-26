@@ -9,3 +9,100 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
+
+/* HEART KEYFRAMES */
+
+@keyframes zoom {
+    0% {
+      transform: scale(1);
+    }
+  
+    50% {
+      transform: scale(1.25);
+    }
+  
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes turn-on {
+    0% {
+      opacity: 0;
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  
+    100% {
+      opacity: 0;
+    }
+  }
+
+  /* HEART ANIMATION*/
+
+  .heart .heart__core {
+    fill: transparent;
+    transition: 0.3s 0.03s;
+  }
+  
+  .heart .heart__main-body {
+    fill: transparent;
+    transition: 0.3s;
+  }
+  
+  .heart .heart__contour {
+    transition: linear 0.1s;
+  }
+  
+  .like-icon:hover .heart__core {
+    fill: #000;
+    transition: 0.3s;
+  }
+  
+  .like-icon:hover .heart__main-body {
+    fill: #000;
+    transition: 0.3s 0.05s;
+  }
+  
+  .like-icon:active .heart__core {
+    fill: #ff0000;
+    transition: 0.3s;
+  }
+  
+  .like-icon:active .heart__main-body {
+    fill: #ff0000;
+    transition: 0.3s 0.05s;
+  }
+  
+  .like-icon.is-liked .heart__core {
+    fill: #ff0000;
+    transition: 0.3s;
+  }
+  
+  .like-icon.is-liked .heart__main-body {
+    fill: #ff0000;
+    transition: 0.3s 0.05s;
+  }
+  
+  .like-icon.is-liked .heart__contour {
+    fill: #ff0000;
+    transition: 0.3s 0.06s;
+  }
+  
+  .is-liked .heart {
+    animation: zoom 0.3s ease-in 0.1s 1;
+    transform-origin: center;
+  }
+  
+  .heart__sparks {
+    opacity: 0;
+    z-index: 1;
+  }
+  
+  .like-icon.is-liked .heart__sparks {
+    animation: turn-on 0.3s ease-in 0.3s 1;
+    transform-origin: center;
+  }
+  

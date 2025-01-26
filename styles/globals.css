@@ -36,6 +36,7 @@ input {
   background-color: #fff;
   font-family: var(--accent-font);
   cursor: pointer;
+  border: 2px solid black;
 }
 
 ul,

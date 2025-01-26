@@ -4,7 +4,7 @@
   src: local('Inter Variable'),
     url(../fonts/Inter-Variable.woff2) format('woff2 supports variations'),
     url(../fonts/Inter-Variable.woff2) format('woff2-variations');
-    font-weight: 400 700;
+    font-weight: 400 785;
     font-display: swap;
 }
 
@@ -13,5 +13,4 @@
   src: local('PressStart2P-Regular'),
     url(../fonts/PressStart2P-Regular.woff) format('woff');
     font-display: 400;
-    font-display: swap;
 }

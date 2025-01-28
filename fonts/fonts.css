@@ -12,5 +12,5 @@
   font-family: 'PressStart2P';
   src: local('PressStart2P-Regular'),
     url(../fonts/PressStart2P-Regular.woff) format('woff');
-    font-display: 400;
+    font-weight: 400;
 }

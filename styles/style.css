@@ -14,22 +14,14 @@
   color: #000;
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  background-color: #808080;
-  background-image: var(--bg-image);
+  background: var(--bg-image), #808080;
   background: repeating-linear-gradient(
       to right,
       #d3d3d3 0px 2px,
       transparent 2px 4px
     ),
-    repeating-linear-gradient(
-      to bottom, 
-      #d3d3d3 0px 2px, 
-      transparent 2px 4px
-    ),
-    linear-gradient(
-      to bottom, 
-      #e7e7e7 0.01%, 
-      #1a1a1a 100%);
+    repeating-linear-gradient(to bottom, #d3d3d3 0px 2px, transparent 2px 4px),
+    linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a 100%);
   background-attachment: fixed;
   background-size: cover;
 }
@@ -37,6 +29,10 @@
 .container {
   margin: 0 auto;
   max-width: 700px;
+}
+
+.button {
+  position: relative;
 }
 
 /* HEADER */
@@ -59,11 +55,12 @@
 
 .header__logo {
   font-family: var(--accent-font);
+  font-weight: 400;
   text-transform: uppercase;
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
 }
 
-.header__title {
+.header__subtitle {
   font-family: var(--accent-font);
   font-weight: 400;
   text-transform: uppercase;
@@ -72,7 +69,7 @@
 
 /* MAIN */
 
-.main__wrapped {
+.main__content {
   display: flex;
   flex-direction: column;
   gap: 50px;
@@ -99,7 +96,6 @@
 
 .image__wrapped {
   position: relative;
-  border: 2px solid #000;
 }
 
 .card__image {
@@ -146,13 +142,6 @@
   filter: hue-rotate(100deg) opacity(0.7) blur(4px);
 }
 
-@supports (-webkit-text-stroke: 1px #fff) {
-  .card__label {
-    -webkit-text-stroke: 1px #fff;
-    text-shadow: none;
-  }
-}
-
 .card__label {
   font-family: var(--accent-font);
   font-size: 14px;
@@ -162,6 +151,13 @@
   mix-blend-mode: hard-light;
   text-shadow: 1px 1px #fff;
   opacity: 0.5;
+}
+
+@supports (-webkit-text-stroke: 1px #fff) {
+  .card__label {
+    -webkit-text-stroke: 1px #fff;
+    text-shadow: none;
+  }
 }
 
 .content__wrapped {
@@ -179,6 +175,10 @@
   font-size: 18px;
 }
 
+.card__text p {
+  line-height: 117%;
+}
+
 .card__button {
   display: flex;
   gap: 5px;
@@ -193,8 +193,7 @@
 
 .card__like-button {
   width: 130px;
-  height: 40px;
-  position: relative;
+  height: 38px;
 }
 
 .button__text {
@@ -204,10 +203,6 @@
   line-height: 90%;
   mix-blend-mode: difference;
   color: #fff;
-}
-
-.extra-padding {
-  padding-right: var(--extra-padding);
 }
 
 /* SAVE */
@@ -226,7 +221,6 @@
   height: 55px;
   justify-content: center;
   align-items: center;
-  position: relative;
 }
 
 .floppy {
@@ -264,12 +258,12 @@
   font-size: 14px;
   line-height: 150%;
   text-transform: uppercase;
+  width: clamp(12.375rem, 11.5827rem + 3.3803vw, 14.625rem);
 }
 
 .close__button {
-  width: 293px;
+  width: clamp(16.063rem, 15.2707rem + 3.3803vw, 18.313rem);
   height: 38px;
-  position: relative;
 }
 
 .close__button:has(.button__text) {
@@ -299,6 +293,10 @@
     padding-right: var(--extra-padding);
   }
 
+  .card__text {
+    gap: 24px;
+  }
+
   .extra {
     --extra-padding: 8px;
   }
@@ -309,6 +307,10 @@
 
   #modal[open] {
     padding: 30px 36px;
+    width: 100%;
+  }
+
+  .modal__wrapped {
     width: 100%;
   }
 
@@ -323,10 +325,9 @@ button:focus {
   outline: none;
 }
 
-.card__like-button:focus-visible,
-.save__button:focus-visible,
-.close__button:focus-visible {
+.button:focus-visible {
   box-shadow: 2px 2px 0 0 #000;
+  transition: 0.3s ease;
 }
 
 .card__icon-button:focus-visible {
@@ -334,9 +335,7 @@ button:focus {
   transition: 0.3s ease;
 }
 
-.card__like-button::before,
-.save__button::before,
-.close__button::before {
+.button::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -346,10 +345,6 @@ button:focus {
   transform: scaleX(0);
 }
 
-.card__like-button:hover::before,
-.save__button:hover::before,
-.close__button:hover::before {
+.button:hover::before {
   transform: scaleX(1);
 }
-
-

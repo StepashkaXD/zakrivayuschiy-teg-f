@@ -14,7 +14,8 @@
   color: #000;
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  background: var(--bg-image), #808080;
+  background-color: #808080;
+  background-image: var(--bg-image);
   background: repeating-linear-gradient(
       to right,
       #d3d3d3 0px 2px,

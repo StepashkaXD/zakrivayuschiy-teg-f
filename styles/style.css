@@ -261,6 +261,10 @@
   width: clamp(12.375rem, 11.5827rem + 3.3803vw, 14.625rem);
 }
 
+.dialog-form {
+  width: 100%;
+}
+
 .close__button {
   width: clamp(16.063rem, 15.2707rem + 3.3803vw, 18.313rem);
   height: 38px;
@@ -315,7 +319,7 @@
   }
 
   .close__button {
-    width: 100%;
+    width: inherit;
   }
 }
 

@@ -9,7 +9,7 @@
 */
 
 .page {
-  font-family: var(--main-font);
+  font-family: var(--main-font, sans-serif);
   font-variation-settings: "wght" var(--text-font-weight);
   color: #000;
   min-inline-size: 320px;
@@ -55,14 +55,14 @@
 }
 
 .header__logo {
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, fantasy);
   font-weight: 400;
   text-transform: uppercase;
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
 }
 
 .header__subtitle {
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, fantasy);
   font-weight: 400;
   text-transform: uppercase;
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
@@ -144,7 +144,7 @@
 }
 
 .card__label {
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, fantasy);
   font-size: 14px;
   position: absolute;
   right: 25px;
@@ -198,7 +198,7 @@
 }
 
 .button__text {
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, fantasy);
   font-weight: 400;
   font-size: 14px;
   line-height: 90%;
@@ -254,7 +254,7 @@
 }
 
 .modal-text {
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, fantasy);
   font-weight: 400;
   font-size: 14px;
   line-height: 150%;

@@ -34,7 +34,7 @@ button,
 input {
   font-size: inherit;
   background-color: #fff;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, fantasy);
   cursor: pointer;
   border: 2px solid black;
 }
